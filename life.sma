@@ -99,13 +99,13 @@ public receive_life(receiver_id, sender_id){
 		return;
 
 	new origin[3], sender_name[32], receiver_name[32];
+
+	get_user_origin(sender_id, origin, 0);
+	origin[2] += 20;
 	
 	ExecuteHamB(Ham_CS_RoundRespawn, receiver_id);
 
 	user_silentkill(sender_id);
-		
-	get_user_origin(receiver_id, origin, 0);
-	origin[2] += 20;
 	
 	set_user_origin(receiver_id, origin);
 
